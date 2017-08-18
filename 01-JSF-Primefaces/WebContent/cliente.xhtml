@@ -26,7 +26,16 @@
 						
 						<p:outputLabel value="Rating" for="rating"/>
 						<p:rating id="rating" value="#{clienteBean.cliente.rating}"/>
-									
+						<p:graphicImage id="fotoImage" value="#{clienteBean.foto}"/>
+						<p:fileUpload
+							fileUploadListener="#{clienteBean.uploadFile}"
+							sizeLimit="100000"
+							allowTypes="/(\.|\/)(gif|jpe?g|png)$/"
+							auto="false"
+							dragDropSupport="false"
+							id="foto"
+							cache="false"
+							update="foto"/>			
 						<p:commandButton value="Gravar" action="#{clienteBean.cadastrar()}"/>			
 					</h:panelGrid>
 				</h:form>
