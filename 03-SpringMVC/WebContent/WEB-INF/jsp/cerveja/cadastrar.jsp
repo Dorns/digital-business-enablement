@@ -1,27 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Cadastro de Cerveja</title>
-</head>
-<body>
-	<h1>Cadastro de Ceveja</h1>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="tag" tagdir="/WEB-INF/tags"%>
+<tag:template title="Cadastro de Cerveja">
+	<h1>Cadastro de Cerveja</h1>
 	<form action="cadastrar" method="post">
-		<div>
-			<label for="id-nome">Nome</label>
-			<input type="text" name="nome" id="id-nome">
+		<div class="form-group">
+			<label for="id-nome">Nome</label> <input type="text" name="nome"
+				id="id-nome" class="form-control">
 		</div>
-		<div>
-			<label for="id-preco">Preco</label>
-			<input type="text" name="preco" id="id-preco">
+		<div class="form-group">
+			<label for="id-preco">Preco</label> <input type="text" name="preco"
+				id="id-preco" class="form-control">
 		</div>
-		<div>
-			<label for="id-tipo">Tipo</label>
-			<input type="text" name="tipo" id="id-tipo">
+		<div class="form-group">
+			<label for="id-tipo">Tipo</label> <input type="text" name="tipo"
+				id="id-tipo" class="form-control">
 		</div>
-		<input type="submit" value="Cadastrar">
+		<input type="submit" value="Cadastrar" class="btn btn-primary">
 	</form>
-</body>
-</html>
+</tag:template>

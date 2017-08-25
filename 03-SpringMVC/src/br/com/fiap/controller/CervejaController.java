@@ -30,4 +30,10 @@ public class CervejaController {
 	}
 	
 	//Listagem
+	@GetMapping("listar")
+	public ModelAndView listagem(){
+		ModelAndView retorno = new ModelAndView("cerveja/lista");
+		retorno.addObject("lista", lista);
+		return retorno;
+	}
 }
