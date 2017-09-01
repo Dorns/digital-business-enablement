@@ -1,6 +1,5 @@
 package br.com.fiap.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,35 +8,33 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.com.fiap.dao.CervejaDAO;
-import br.com.fiap.model.Cerveja;
+import br.com.fiap.dao.PetiscoDAO;
+import br.com.fiap.model.Petisco;
 
 @Controller
-@RequestMapping("/cerveja")
-public class CervejaController {
+@RequestMapping("/petisco")
+public class PetiscoController {
+
+	@Autowired
+	private PetiscoDAO dao;
 	
-	@Autowired //Injeção de dependência
-	private CervejaDAO dao;
-	//private static List<Cerveja> lista = new ArrayList<>();
-	//Abrir a tela com o formulario
 	@GetMapping("cadastrar")
 	public String abrirForm(){
-		return "cerveja/cadastrar";
+		return "petisco/cadastrar";
 	}
 	
 	@Transactional
 	@PostMapping(value="cadastrar")
-	public ModelAndView processarForm(Cerveja cerveja){
-		dao.cadastrar(cerveja);
-		ModelAndView retorno = new ModelAndView("cerveja/sucesso");
-		retorno.addObject("cerv", cerveja);
+	public ModelAndView processarForm(Petisco petisco){
+		dao.cadastrar(petisco);
+		ModelAndView retorno = new ModelAndView("petisco/sucesso");
+		retorno.addObject("pets", petisco);
 		return retorno;
 	}
 	
-	//Listagem
 	@GetMapping("listar")
 	public ModelAndView listagem(){
-		ModelAndView retorno = new ModelAndView("cerveja/lista");
+		ModelAndView retorno = new ModelAndView("petisco/lista");
 		retorno.addObject("lista", dao.listar());
 		return retorno;
 	}

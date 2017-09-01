@@ -1,10 +1,26 @@
 package br.com.fiap.model;
 
-public class Cerveja {
-	private String nome;
-	private double preco;
-	private String tipo;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
+@Entity
+@SequenceGenerator(name="seqCerveja", sequenceName="SQ_CERVEJA", allocationSize=1)
+public class Cerveja {
+	
+	@Id
+	@GeneratedValue(generator="seqCerveja", strategy=GenerationType.SEQUENCE)
+	private int codigo;
+	
+	
+	private String nome;
+	
+	private double preco;
+	
+	private String tipo;
+	
 	public String getNome() {
 		return nome;
 	}
@@ -27,5 +43,13 @@ public class Cerveja {
 
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
+	}
+
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
 	}
 }

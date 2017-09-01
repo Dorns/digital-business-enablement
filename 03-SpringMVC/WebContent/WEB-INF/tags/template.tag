@@ -1,6 +1,7 @@
 <%@ tag language="java" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ attribute name="title" required="true"%>
+<%@ attribute name="scripts" fragment="true"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -21,18 +22,20 @@
 
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active"><a class="nav-link" href="<c:url value="/"/>">Home
-					<span class="sr-only">(current)</span>
-			</a></li>
-			<li class="nav-item"><a class="nav-link" href="<c:url value="/cerveja/cadastrar"/>">Cadastrar</a></li>
-			<li class="nav-item"><a class="nav-link" href="<c:url value="/cerveja/listar"/>">Listar</a>
+			<li class="nav-item active"><a class="nav-link"
+				href="<c:url value="/"></c:url>">Home <span class="sr-only">(current)</span></a>
 			</li>
+			<li class="nav-item"><a class="nav-link"
+				href="<c:url value="/cerveja/cadastrar"></c:url>">Cadastro</a></li>
+			<li class="nav-item"><a class="nav-link"
+				href="<c:url value="/cerveja/listar"></c:url>">Lista</a></li>
 		</ul>
 	</div>
 	</nav>
 	<div class="container">
 		<jsp:doBody />
 	</div>
+	<p class="text-center">Todos os direitos reservados.</p>
 	<script type="text/javascript"
 		src="<c:url value="/resources/js/jquery-3.2.1.min.js"/>">
 		
@@ -41,5 +44,6 @@
 		src="<c:url value="/resources/js/bootstrap.min.js"/>">
 		
 	</script>
+	<jsp:invoke fragment="scripts"></jsp:invoke>
 </body>
 </html>
