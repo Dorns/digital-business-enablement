@@ -11,7 +11,7 @@ import javax.persistence.SequenceGenerator;
 public class Petisco {
 
 	@Id
-	@GeneratedValue(generator="seqPet", strategy=GenerationType.SEQUENCE)
+	@GeneratedValue(generator="seqPetisco", strategy=GenerationType.SEQUENCE)
 	private int codigo;
 	
 	private String nome;

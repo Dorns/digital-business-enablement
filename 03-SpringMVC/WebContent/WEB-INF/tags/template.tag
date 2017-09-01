@@ -26,9 +26,13 @@
 				href="<c:url value="/"></c:url>">Home <span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item"><a class="nav-link"
-				href="<c:url value="/cerveja/cadastrar"></c:url>">Cadastro</a></li>
+				href="<c:url value="/cerveja/cadastrar"></c:url>">Cadastro de Cerveja</a></li>
 			<li class="nav-item"><a class="nav-link"
-				href="<c:url value="/cerveja/listar"></c:url>">Lista</a></li>
+				href="<c:url value="/cerveja/listar"></c:url>">Lista de Cervejas</a></li>
+						<li class="nav-item"><a class="nav-link"
+				href="<c:url value="/petisco/cadastrar"></c:url>">Cadastro de Petiscos</a></li>
+			<li class="nav-item"><a class="nav-link"
+				href="<c:url value="/petisco/listar"></c:url>">Lista de Petiscos</a></li>
 		</ul>
 	</div>
 	</nav>

@@ -27,8 +27,8 @@ public class PetiscoController {
 	@PostMapping(value="cadastrar")
 	public ModelAndView processarForm(Petisco petisco){
 		dao.cadastrar(petisco);
-		ModelAndView retorno = new ModelAndView("petisco/sucesso");
-		retorno.addObject("pets", petisco);
+		ModelAndView retorno = new ModelAndView("petisco/cadastrar");
+		retorno.addObject("msg", "Cadastrado com sucesso!");
 		return retorno;
 	}
 	
